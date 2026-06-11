@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacker Colony Official Hub</title>
+  <meta name="description" content="Official community portal and support directory for Hacker Colony." />
+  <style>
+    :root {
+      --bg: #0b1329;
+      --surface: #111b35;
+      --card: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #22c55e;
+      --blue: #38bdf8;
+      --warning-bg: rgba(239, 68, 68, 0.1);
+      --warning-border: rgba(239, 68, 68, 0.3);
+      --warning-text: #f87171;
+      --shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #020617, var(--bg));
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .wrapper {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: var(--shadow);
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .header {
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 25px;
+    }
+
+    .warning-title {
+      color: var(--warning-text);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .warning-desc {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: background 0.2s ease, transform 0.1s ease;
+      text-align: center;
+      min-height: 45px;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn.youtube { background-color: #ef4444; }
+    .btn.youtube:hover { background-color: #dc2626; }
+    
+    .btn.telegram { background-color: #0ea5e9; }
+    .btn.telegram:hover { background-color: #0284c7; }
+
+    .group-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .btn.whatsapp { background-color: #22c55e; }
+    .btn.whatsapp:hover { background-color: #16a34a; }
+
+    .contact-row {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-info strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .contact-info span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-small {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      min-height: auto;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .group-buttons {
+        grid-template-columns: 1fr;
+      }
+      .wrapper {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <main class="wrapper">
+      
+      <header class="header">
+        <h1>Hacker Colony</h1>
+        <p>Official community directory. Use the verified links below to join our platforms or contact official helpdesk support.</p>
+      </header>
+
+      <div class="warning-box">
+        <div class="warning-title">⚠️ Important Community Rules</div>
+        <div class="warning-desc">
+          Groups <strong>G1, G2, and G3</strong> are exactly the same and created only to accommodate more members. <strong>Please join only ONE group.</strong> Tagging admins across multiple groups or joining duplicate groups will result in a strict warning and immediate removal.
+        </div>
+      </div>
+
+      <div class="grid">
+        
+        <section class="card">
+          <div>
+            <h2>YouTube Channel</h2>
+            <p>Subscribe to our official channel for latest updates, tutorials, and standard educational video content.</p>
+          </div>
+          <a class="btn youtube" href="https://youtube.com/@hackers_colony_tech?si=O-3b4cEpMCxFo_J3" target="_blank" rel="noopener noreferrer">Open YouTube Channel</a>
+        </section>
+
+        <section class="card">
+          <div>
+            <h2>WhatsApp Groups</h2>
+            <p>Select and join any one available group button below to connect with our official community.</p>
+          </div>
+          <div class="group-buttons">
+            <a class="btn whatsapp" href="https://chat.whatsapp.com/IfmbwIuSMRw8JV2qs1mrKu" target="_blank" rel="noopener noreferrer">Join G1</a>
+            <a class="btn whatsapp" href="https://chat.whatsapp.com/BGJkixzJMO462C3Az43usC" target="_blank" rel="noopener noreferrer">Join G2</a>
+            <a class="btn whatsapp" href="https://chat.whatsapp.com/LYi5fJ0ccCBGY5E1kQCUTF" target="_blank" rel="noopener noreferrer">Join G3</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <div>
+            <h2>Helpdesk Contact</h2>
+            <p>If you have any business queries or need direct support, message our team on WhatsApp.</p>
+          </div>
+          <div class="contact-row">
+            <div class="contact-item">
+              <div class="contact-info">
+                <strong>Rain</strong>
+                <span>+91 99799 42108</span>
+              </div>
+              <a class="btn whatsapp btn-small" href="https://wa.me/919979942108?text=I%20visited%20your%20website%2C%20I%20want%20to%20join%20your%20group" target="_blank" rel="noopener noreferrer">Message</a>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-info">
+                <strong>Azher</strong>
+                <span>+91 84206 11159</span>
+              </div>
+              <a class="btn whatsapp btn-small" href="https://wa.me/918420611159?text=I%20visited%20your%20website%2C%20I%20want%20to%20join%20your%20group" target="_blank" rel="noopener noreferrer">Message</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div>
+            <h2>Telegram Support Bot</h2>
+            <p>For automated help, inquiries, or fast support tickets, chat with our official Telegram bot.</p>
+          </div>
+          <a class="btn telegram" href="https://t.me/HACKER_COLONY_OFFICE_CONTACT_BOT" target="_blank" rel="noopener noreferrer">Open Telegram Bot</a>
+        </section>
+
+      </div>
+
+      <footer class="footer">
+        &copy; 2026 Hacker Colony. All Official Rights Reserved.
+      </footer>
+      
+    </main>
+  </div>
+
+</body>
+</html>
